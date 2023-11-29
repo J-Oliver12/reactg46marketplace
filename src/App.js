@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import AdvertisementList from './components/AdvertisementList';
+import Header from './components/Header'; 
+import Footer from './components/Footer';
 
-function App() {
+const App = () => {
+  const advertisementsData = [
+    {
+      title: 'Ad 1',
+      description: 'This is the first advertisement.',
+      image: 'https://via.placeholder.com/150',
+      contact: 'contact1@example.com',
+    },
+    {
+      title: 'Ad 2',
+      description: 'This is the second advertisement.',
+      image: 'https://via.placeholder.com/150',
+      contact: 'contact2@example.com',
+    },
+    {
+      title: 'Ad 3',
+      description: 'This is the third advertisement.',
+      image: 'https://via.placeholder.com/150',
+      contact: 'contact3@example.com',
+    },
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+      <AdvertisementList advertisements={advertisementsData} />
+      <Footer /> 
     </div>
   );
-}
+};
 
 export default App;
